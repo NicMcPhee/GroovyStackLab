@@ -19,7 +19,7 @@ public class Stack<T> implements StackIF<T> {
      * Construct an empty stack.
      */
     public Stack() {
-        throw new UnsupportedOperationException();
+        // throw new UnsupportedOperationException();
     }
 
     /**
@@ -83,7 +83,7 @@ public class Stack<T> implements StackIF<T> {
      * @return the number of elements on the stack
      */
     public int size() {
-        throw new UnsupportedOperationException();
+        return 0;
     }
 
     /**
