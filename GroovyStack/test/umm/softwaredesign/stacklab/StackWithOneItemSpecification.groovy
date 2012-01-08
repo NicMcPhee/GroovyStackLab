@@ -22,4 +22,22 @@ class StackWithOneItemSpecification extends Specification {
         then:
         !stack.isEmpty()
     }
+    
+    def "top should be the pushed element"() {
+        when:
+        stack.push("Morris")
+        
+        then:
+        stack.top() == "Morris"
+        stack.size() == 1
+    }
+    
+    def "pop should return pushed element & size should become 0"() {
+        when:
+        stack.push("Morris")
+        stack.pop()
+        
+        then:
+        stack.size() == 0
+    }
 }

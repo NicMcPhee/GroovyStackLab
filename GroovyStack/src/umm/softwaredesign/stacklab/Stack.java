@@ -70,8 +70,11 @@ public class Stack<T> implements StackIF<T> {
      * @return the top value on the stack
      */
     public T top() {
-        // This should throw a StackUnderflowException if the stack is empty.
-        throw new StackUnderflowException();
+        if (elements.isEmpty()) {
+            throw new StackUnderflowException();
+        } else {
+            return elements.get(elements.size() - 1);
+        }
     }
 
     /**
@@ -79,8 +82,11 @@ public class Stack<T> implements StackIF<T> {
      * StackUnderflowException is thrown.
      */
     public void pop() {
-        // This should throw a StackUnderflowException if the stack is empty.
-        throw new StackUnderflowException();
+        if (elements.isEmpty()) {
+            throw new StackUnderflowException();
+        } else {
+            elements.remove(elements.size() - 1);
+        }
     }
 
     /**
