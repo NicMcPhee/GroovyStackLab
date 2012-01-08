@@ -65,7 +65,7 @@ public class Stack<T> implements StackIF<T> {
      */
     public T top() {
         // This should throw a StackUnderflowException if the stack is empty.
-        throw new UnsupportedOperationException();
+        throw new StackUnderflowException();
     }
 
     /**
@@ -74,7 +74,7 @@ public class Stack<T> implements StackIF<T> {
      */
     public void pop() {
         // This should throw a StackUnderflowException if the stack is empty.
-        throw new UnsupportedOperationException();
+        throw new StackUnderflowException();
     }
 
     /**
@@ -92,7 +92,7 @@ public class Stack<T> implements StackIF<T> {
      * @return true if the stack is empty, false otherwise
      */
     public boolean isEmpty() {
-        throw new UnsupportedOperationException();
+        return true;
     }
 
     /**

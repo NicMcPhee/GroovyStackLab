@@ -2,21 +2,34 @@ package umm.softwaredesign.stacklab
 
 class SimpleSpockStackTest extends spock.lang.Specification {
     def "new stack is empty"() {
+        setup:
+        def stack = new Stack<Integer>()
+        
         expect:
-        (new Stack()).size() == 0
+        stack.size() == 0
+    }
+    
+    def "popping an empty stack throws an exception"() {
+        setup:
+        def stack = new Stack<Integer>()
+        
+        when:
+        stack.pop()
+        
+        then:
+        thrown(StackUnderflowException)
+        stack.isEmpty()
+    }
+    
+    def "top on empty stack throws an exception"() {
+        setup:
+        def stack = new Stack<Integer>()
+        
+        when:
+        stack.top()
+        
+        then:
+        thrown(StackUnderflowException)
+        stack.isEmpty()
     }
 }
-
-//class HelloSpock extends spock.lang.Specification {
-//    def "length of Spock's and his friends' names"() {
-//        expect:
-//        name.size() == length
-//
-//        where:
-//        name     | length
-//        "Spock"  | 5
-//        "Kirk"   | 3
-//        "Scotty" | 6
-//    }
-//}
-
