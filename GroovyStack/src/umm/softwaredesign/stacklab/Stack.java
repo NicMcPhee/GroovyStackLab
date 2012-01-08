@@ -18,14 +18,12 @@ import umm.softwaredesign.stacklab.StackIF;
  * @version $Revision: 1.16 $
  */
 public class Stack<T> implements StackIF<T> {
-    private List<T> elements = new ArrayList<T>();
 
     /**
      * Construct an empty stack.
      */
     public Stack() {
-        // Do nothing - the construction of the elements list in its declaration is all
-        // we need.
+		throw new UnsupportedOperationException();
     }
 
     /**
@@ -60,7 +58,7 @@ public class Stack<T> implements StackIF<T> {
     // definitely ask.
     // This may be flagged by Eclipse or a plugin.
     public void push(T value) {
-        elements.add(value);
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -70,11 +68,7 @@ public class Stack<T> implements StackIF<T> {
      * @return the top value on the stack
      */
     public T top() {
-        if (elements.isEmpty()) {
-            throw new StackUnderflowException();
-        } else {
-            return elements.get(elements.size() - 1);
-        }
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -82,11 +76,7 @@ public class Stack<T> implements StackIF<T> {
      * StackUnderflowException is thrown.
      */
     public void pop() {
-        if (elements.isEmpty()) {
-            throw new StackUnderflowException();
-        } else {
-            elements.remove(elements.size() - 1);
-        }
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -95,7 +85,7 @@ public class Stack<T> implements StackIF<T> {
      * @return the number of elements on the stack
      */
     public int size() {
-        return elements.size();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -104,7 +94,7 @@ public class Stack<T> implements StackIF<T> {
      * @return true if the stack is empty, false otherwise
      */
     public boolean isEmpty() {
-        return elements.isEmpty();
+        throw new UnsupportedOperationException();
     }
 
     /**
