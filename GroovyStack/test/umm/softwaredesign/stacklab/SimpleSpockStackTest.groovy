@@ -32,4 +32,17 @@ class SimpleSpockStackTest extends spock.lang.Specification {
         thrown(StackUnderflowException)
         stack.isEmpty()
     }
+    
+    def "pushing a popping two items"() {
+        setup: "Create an empty stack"
+        def stack = new Stack<Integer>()
+        
+        when: "pushing two items onto the stack"
+        stack.push(5);
+        stack.push(8);
+        
+        then: "Size should be 2 and top should be second item pushed"
+        stack.size() == 2
+        stack.top() == 8
+    }
 }
