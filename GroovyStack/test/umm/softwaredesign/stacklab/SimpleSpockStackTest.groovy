@@ -2,33 +2,33 @@ package umm.softwaredesign.stacklab
 
 class SimpleSpockStackTest extends spock.lang.Specification {
     def "new stack is empty"() {
-        setup:
+        setup: "Create an empty stack"
         def stack = new Stack<Integer>()
         
-        expect:
+        expect: "Size to be zero"
         stack.size() == 0
     }
     
     def "popping an empty stack throws an exception"() {
-        setup:
+        setup: "Create an empty stack"
         def stack = new Stack<Integer>()
         
-        when:
+        when: "pop an empty stack"
         stack.pop()
         
-        then:
+        then: "throws an underflow exception and is still empty"
         thrown(StackUnderflowException)
         stack.isEmpty()
     }
     
     def "top on empty stack throws an exception"() {
-        setup:
+        setup: "Create an empty stack"
         def stack = new Stack<Integer>()
         
-        when:
+        when: "taking top of an empty stack"
         stack.top()
         
-        then:
+        then: "throws an underflow exception and is still empty"
         thrown(StackUnderflowException)
         stack.isEmpty()
     }
