@@ -14,4 +14,12 @@ class StackWithOneItemSpecification extends Specification {
         then:
         stack.size() == 1
     }
+    
+    def "should not be empty"() {
+        when:
+        stack.push("Morris")
+        
+        then:
+        !stack.isEmpty()
+    }
 }
