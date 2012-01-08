@@ -5,6 +5,9 @@ package umm.softwaredesign.stacklab;
 // Fix them, don't just ignore them.  If you don't understand why they're a
 // Bad Thing, you definitely should ask.
 import java.lang.Object;
+import java.util.ArrayList;
+import java.util.List;
+
 import umm.softwaredesign.stacklab.StackIF;
 
 /**
@@ -15,11 +18,14 @@ import umm.softwaredesign.stacklab.StackIF;
  * @version $Revision: 1.16 $
  */
 public class Stack<T> implements StackIF<T> {
+    private List<T> elements = new ArrayList<T>();
+
     /**
      * Construct an empty stack.
      */
     public Stack() {
-        // throw new UnsupportedOperationException();
+        // Do nothing - the construction of the elements list in its declaration is all
+        // we need.
     }
 
     /**
@@ -54,7 +60,7 @@ public class Stack<T> implements StackIF<T> {
     // definitely ask.
     // This may be flagged by Eclipse or a plugin.
     public void push(T value) {
-        throw new UnsupportedOperationException();
+        elements.add(value);
     }
 
     /**
@@ -83,7 +89,7 @@ public class Stack<T> implements StackIF<T> {
      * @return the number of elements on the stack
      */
     public int size() {
-        return 0;
+        return elements.size();
     }
 
     /**
